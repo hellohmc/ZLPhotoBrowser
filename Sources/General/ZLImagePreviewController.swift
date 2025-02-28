@@ -42,7 +42,7 @@ public typealias ZLImageLoaderBlock = (_ url: URL, _ imageView: UIImageView, _ p
     @objc optional func imagePreviewController(_ controller: ZLImagePreviewController, didScroll collectionView: UICollectionView)
 }
 
-public class ZLImagePreviewController: UIViewController {
+open class ZLImagePreviewController: UIViewController {
     static let colItemSpacing: CGFloat = 40
     
     static let selPhotoPreviewH: CGFloat = 100
@@ -208,7 +208,7 @@ public class ZLImagePreviewController: UIViewController {
     }
     
     @available(*, unavailable)
-    required init?(coder _: NSCoder) {
+    required public init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
