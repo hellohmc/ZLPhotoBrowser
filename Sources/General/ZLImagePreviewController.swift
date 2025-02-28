@@ -87,7 +87,7 @@ public class ZLImagePreviewController: UIViewController {
     
     private let navViewAlpha = 0.95
     
-    private lazy var navView: UIView = {
+    public private(set) lazy var navView: UIView = {
         let view = UIView()
         view.backgroundColor = .zl.navBarColorOfPreviewVC
         view.alpha = navViewAlpha
@@ -110,7 +110,7 @@ public class ZLImagePreviewController: UIViewController {
         return btn
     }()
     
-    private lazy var indexLabel: UILabel = {
+    public private(set) lazy var indexLabel: UILabel = {
         let label = UILabel()
         label.textColor = .zl.indexLabelTextColor
         label.font = ZLLayout.navTitleFont
