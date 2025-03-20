@@ -212,7 +212,7 @@ open class ZLImagePreviewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
@@ -289,6 +289,8 @@ open class ZLImagePreviewController: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
         collectionView.collectionViewLayout.invalidateLayout()
     }
+    
+    open func onDidScrollToPage(_ page: Int) { }
     
     private func reloadCurrentCell() {
         guard let cell = collectionView.cellForItem(at: IndexPath(row: currentIndex, section: 0)) else {
@@ -512,6 +514,7 @@ public extension ZLImagePreviewController {
         
         currentIndex = page
         resetSubViewStatus()
+        self.onDidScrollToPage(page)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
